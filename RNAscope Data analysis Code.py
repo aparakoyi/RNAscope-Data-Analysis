@@ -15,21 +15,21 @@ import os
 
 def main():
     """ Business Logic"""
-    # opens the Excel file and allows read access to it
-    root_dir = 'MPOA Data 20.01-20.10'
-    print('running')
+   # opens the Excel file and allows read access to it
+    # root_dir = 'MPOA Data 20.01-20.10'
+    # print('running')
     # print(list(os.listdir(root_dir)))
-    for file in os.listdir(root_dir):
-        os.path.join(directory, file)
-        data = get_filehandle(root_dir+'/'+file)
-        # path = "/Users/abigailparakoyi/Desktop/LabWork/20.01.xlsx"  # hardcode the absolute path to data sheet
-        # data = get_filehandle(path)
+    # for file in os.listdir(root_dir):
+           #  os.path.join(directory, file)
+        #data = get_filehandle(root_dir+'/'+file)
+    path = "/Users/abigailparakoyi/Desktop/LabWork/20.01.xlsx"  # hardcode the absolute path to data sheet
+    data = get_filehandle(path)
             # print(data) # keep for testing purposes
-        data = data.fillna(0)   # open the data and replace all blanks with zeros
-        dictionary = make_dict(data)
-        df = pd.DataFrame(data=dictionary, index=['Subject Number'])
-        df.to_excel("test3.xlsx")   # Change name to desired excel sheet name
-        print("converted to excel")
+    data = data.fillna(0)   # open the data and replace all blanks with zeros
+    dictionary = make_dict(data)
+    df = pd.DataFrame(data=dictionary, index=['Subject Number'])
+    df.to_excel("test3.xlsx")   # Change name to desired excel sheet name
+    print("converted to excel")
     # print(dictionary)
 
 
